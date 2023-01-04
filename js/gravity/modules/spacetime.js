@@ -244,7 +244,7 @@ define([
 
 				spacetimeLoop = setInterval(function(){
 					self.calculateForces();
-				}, 100/calculationsPerSec); //1000
+				}, 1000/calculationsPerSec); //1000
 			}
 
 			api.stopLoop = function(){
