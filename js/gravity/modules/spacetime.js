@@ -13,7 +13,7 @@ define([
 		var spacetime = [];
 
 		// Simulation settings
-		var calculationsPerSec 	= 5;	// How many gravitational calculations are performed a second
+		var calculationsPerSec 	= 50;	// How many gravitational calculations are performed a second
 		var calculationSpeed 	= 1; 	// Speed comes at the cost of accuracy
 		var massMultiplier;				// How exagurated the size of the objects are (human readable)
 
@@ -58,7 +58,7 @@ define([
 		// Takes in object, returns radius from object mass and density
 		function getObjectRadius(object){
 			var radius = Math.cbrt(
-				object.mass*object.density*massMultiplier)
+				object.mass*object.density*massMultiplier
 			);
 			
 			return radius;
@@ -173,11 +173,11 @@ define([
 						// All credit for this formula goes to an Isaac Newton
 						objectA.deltaVelX += (
 							Math.cos(angleToMass) *
-							(objectB.mass/Math.pow(distance,2) * 1) // 2
+							(objectB.mass/Math.pow(distance,2) * 1.75) // 2
 						);
 						objectA.deltaVelY += (
 							Math.sin(angleToMass) *
-							(objectB.mass/Math.pow(distance,2) * (-2)) // 2
+							(objectB.mass/Math.pow(distance,2) * 2.25) // 2
 						);
 					};
 				};
