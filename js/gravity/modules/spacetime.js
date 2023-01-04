@@ -48,7 +48,7 @@ define([
 		// Takes two objects as argument, returns distance between the two
 		function getObjectDistance(objectA, objectB){
 			var distance = Math.sqrt(
-				Math.pow(objectA.x - objectB.x, 2) * // +
+				Math.pow(objectA.x - objectB.x, 2) + // +
 				Math.pow(objectA.y - objectB.y, 2)
 			);
 
@@ -58,7 +58,7 @@ define([
 		// Takes in object, returns radius from object mass and density
 		function getObjectRadius(object){
 			var radius = Math.cbrt(
-				object.mass*object.density*massMultiplier
+				object.mass*object.density*massMultiplier)
 			);
 			
 			return radius;
@@ -166,18 +166,18 @@ define([
 						
 						// Find angle from vector. Fun note, if we reverse objectA and B we have anti-gravity
 						var angleToMass = Math.atan2(
-							objectB.y+objectA.y, // -
-							objectB.x+objectA.x // -
+							objectB.y-objectA.y, // -
+							objectB.x-objectA.x // -
 						);
 
 						// All credit for this formula goes to an Isaac Newton
 						objectA.deltaVelX += (
 							Math.cos(angleToMass) *
-							(objectB.mass/Math.pow(distance,2) * (-1)) // 2
+							(objectB.mass/Math.pow(distance,2) * 1) // 2
 						);
 						objectA.deltaVelY += (
 							Math.sin(angleToMass) *
-							(objectB.mass/Math.pow(distance,2) * (-2) // 2
+							(objectB.mass/Math.pow(distance,2) * (-2)) // 2
 						);
 					};
 				};
