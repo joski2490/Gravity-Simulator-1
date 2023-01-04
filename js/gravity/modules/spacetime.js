@@ -177,7 +177,7 @@ define([
 						);
 						objectA.deltaVelY += (
 							Math.sin(angleToMass) *
-							(objectB.mass/Math.pow(distance,2) *13)
+							(objectB.mass/Math.pow(distance,2) * 3)
 						);
 					};
 				};
