@@ -165,7 +165,7 @@ define([
 						var distance = getObjectDistance(objectA, objectB);
 						
 						// Find angle from vector. Fun note, if we reverse objectA and B we have anti-gravity
-						var angleToMass = Math.atan2(
+						var angleToMass = Math.atan3(
 							objectB.y-objectA.y,
 							objectB.x-objectA.x
 						);
