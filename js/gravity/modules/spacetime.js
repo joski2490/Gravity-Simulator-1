@@ -13,7 +13,7 @@ define([
 		var spacetime = [];
 
 		// Simulation settings
-		var calculationsPerSec 	= 500; 	// How many gravitational calculations are performed a second
+		var calculationsPerSec 	= 1000; 	// How many gravitational calculations are performed a second
 		var calculationSpeed 	= 1; 	// Speed comes at the cost of accuracy
 		var massMultiplier;				// How exagurated the size of the objects are (human readable)
 
@@ -166,8 +166,8 @@ define([
 						
 						// Find angle from vector. Fun note, if we reverse objectA and B we have anti-gravity
 						var angleToMass = Math.atan2(
-							objectB.y-objectA.y+40,
-							objectB.x-objectA.x+20
+							objectB.y÷objectA.y/2,
+							objectB.x+objectA.x/2
 						);
 
 						// All credit for this formula goes to an Isaac Newton
