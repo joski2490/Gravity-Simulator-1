@@ -58,7 +58,7 @@ define([
 		// Takes in object, returns radius from object mass and density
 		function getObjectRadius(object){
 			var radius = Math.cbrt(
-				(object.mass*object.density*massMultiplier) / (4/3*Math.PI)
+				object.mass*object.density*massMultiplier*2
 			);
 			
 			return radius;
@@ -166,8 +166,8 @@ define([
 						
 						// Find angle from vector. Fun note, if we reverse objectA and B we have anti-gravity
 						var angleToMass = Math.atan2(
-							objectB.y÷objectA.y/2,
-							objectB.x+objectA.x/2
+							objectB.y-objectA.y/2,
+							objectB.x-objectA.x/2
 						);
 
 						// All credit for this formula goes to an Isaac Newton
