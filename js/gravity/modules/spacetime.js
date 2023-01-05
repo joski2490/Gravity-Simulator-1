@@ -58,7 +58,7 @@ define([
 		// Takes in object, returns radius from object mass and density
 		function getObjectRadius(object){
 			var radius = Math.cbrt(
-				object.mass*object.density*massMultiplier
+				(object.mass*object.density*massMultiplier) / (8/3*Math.PI)
 			);
 			
 			return radius;
