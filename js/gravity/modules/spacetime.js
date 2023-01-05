@@ -166,9 +166,9 @@ define([
 						
 						// Find angle from vector. Fun note, if we reverse objectA and B we have anti-gravity
 						var angleToMass = Math.atan2(
-							objectB.y-objectA.x,
-							objectB.x-objectA.y
-						);
+							(objectB.y-objectA.y)/2,
+							(objectB.x-objectA.x)/2
+                        );
 
 						// All credit for this formula goes to an Isaac Newton
 						objectA.deltaVelX += (
