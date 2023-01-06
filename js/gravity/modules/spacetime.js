@@ -13,7 +13,7 @@ define([
 		var spacetime = [];
 
 		// Simulation settings
-		var calculationsPerSec 	= 10000; 	// How many gravitational calculations are performed a second
+		var calculationsPerSec 	= 5000; 	// How many gravitational calculations are performed a second
 		var calculationSpeed 	= 1; 	// Speed comes at the cost of accuracy
 		var massMultiplier;				// How exagurated the size of the objects are (human readable)
 
@@ -42,7 +42,7 @@ define([
 		function getMomentum(object){
 			var velocity = getVelocity(object);
 
-			return velocity * object.mass/2;
+			return velocity * object.mass;
 		}
 
 		// Takes two objects as argument, returns distance between the two
@@ -58,7 +58,7 @@ define([
 		// Takes in object, returns radius from object mass and density
 		function getObjectRadius(object){
 			var radius = Math.cbrt(
-				(object.mass*object.density*massMultiplier) / (8/3*Math.PI)
+				(object.mass*object.density*massMultiplier) / (4/3*Math.PI)
 			);
 			
 			return radius;
@@ -166,8 +166,8 @@ define([
 						
 						// Find angle from vector. Fun note, if we reverse objectA and B we have anti-gravity
 						var angleToMass = Math.atan2(
-							(objectB.y-objectA.y),
-							(objectB.x-objectA.x)
+							(objectB.y-objectA.y)*(-1),
+							(objectB.x-objectA.x)*(-1)
                         );
 
 						// All credit for this formula goes to an Isaac Newton
