@@ -13,7 +13,7 @@ define([
 		var spacetime = [];
 
 		// Simulation settings
-		var calculationsPerSec 	= 1000; 	// How many gravitational calculations are performed a second
+		var calculationsPerSec 	= 5000; 	// How many gravitational calculations are performed a second
 		var calculationSpeed 	= 1; 	// Speed comes at the cost of accuracy
 		var massMultiplier;				// How exagurated the size of the objects are (human readable)
 
@@ -173,11 +173,11 @@ define([
 						// All credit for this formula goes to an Isaac Newton
 						objectA.deltaVelX += (
 							Math.cos(angleToMass) *
-							(objectB.mass/Math.pow(distance,2)*1000)
+							(objectB.mass/Math.pow(distance,2))
 						);
 						objectA.deltaVelY += (
-							Math.cos(angleToMass) *
-							(objectB.mass/Math.pow(distance,2)*1000)
+							Math.sin(angleToMass) *
+							(objectB.mass/Math.pow(distance,2))
 						);
 					};
 				};
