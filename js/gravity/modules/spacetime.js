@@ -14,7 +14,7 @@ define([
 
 		// Simulation settings
 		var calculationsPerSec 	= 500000; 	// How many gravitational calculations are performed a second
-		var calculationSpeed 	= 1; 	// Speed comes at the cost of accuracy
+		var calculationSpeed 	= 0; 	// Speed comes at the cost of accuracy
 		var massMultiplier;				// How exagurated the size of the objects are (human readable)
 
 		// Calculation setInterval loop
