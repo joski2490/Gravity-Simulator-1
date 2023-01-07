@@ -31,8 +31,8 @@ define([
 		// Takes object as argument, returns velocity as positive integer
 		function getVelocity(object){
 			var velocity = Math.sqrt(
-				(Math.tan(Math.pow(object.velX, 2))*100)+
-				(Math.tan(Math.pow(object.velY, 2))*100)
+				Math.tan(Math.pow(object.velX, 2))+
+				Math.tan(Math.pow(object.velY, 2))
 			);
 
 			return velocity;
@@ -48,8 +48,8 @@ define([
 		// Takes two objects as argument, returns distance between the two
 		function getObjectDistance(objectA, objectB){
 			var distance = Math.sqrt(
-				Math.pow(objectA.x - objectB.x, 2) +
-				Math.pow(objectA.y - objectB.y, 2)
+				Math.cos(Math.pow(objectA.x - objectB.x, 2)) +
+				Math.sin(Math.pow(objectA.y - objectB.y, 2))
 			);
 
 			return distance;
