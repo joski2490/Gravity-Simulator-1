@@ -48,9 +48,9 @@ define([
 		// Takes two objects as argument, returns distance between the two
 		function getObjectDistance(objectA, objectB){
 			var distance = Math.sqrt(
-				Math.atan(Math.pow(objectA.x - objectB.x, 2)) +
-				Math.tan(Math.pow(objectA.y - objectB.y, 2))
-			)*100;
+				Math.atan(objectA.x - objectB.x) +
+				Math.tan(objectA.y - objectB.y)
+			)*10;
 
 			return distance;
 		}
