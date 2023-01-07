@@ -48,8 +48,8 @@ define([
 		// Takes two objects as argument, returns distance between the two
 		function getObjectDistance(objectA, objectB){
 			var distance = Math.sqrt(
-				Math.cos(Math.pow(objectA.x - objectB.x, 2)) +
-				Math.sin(Math.pow(objectA.y - objectB.y, 2))
+				Math.atan(Math.pow(objectA.x - objectB.x, 2)) +
+				Math.tan(Math.pow(objectA.y - objectB.y, 2))
 			);
 
 			return distance;
