@@ -176,7 +176,7 @@ define([
 							(objectB.mass/Math.pow(distance,2))
 						);
 						objectA.deltaVelY += (
-							Math.asin(angleToMass) *
+							Math.asinh(angleToMass) *
 							(objectB.mass/Math.pow(distance,2))
 						);
 					};
