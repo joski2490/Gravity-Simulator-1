@@ -31,8 +31,8 @@ define([
 		// Takes object as argument, returns velocity as positive integer
 		function getVelocity(object){
 			var velocity = Math.sqrt(
-				Math.pow(object.velX, 2)+
-				Math.pow(object.velY, 2)
+				Math.pow((object.velX-object.velY), 2)+
+				Math.pow((object.velY-object.velX), 2)
 			);
 
 			return velocity;
