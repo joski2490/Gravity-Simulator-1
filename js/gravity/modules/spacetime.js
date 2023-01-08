@@ -172,11 +172,11 @@ define([
 
 						// All credit for this formula goes to an Isaac Newton
 						objectA.deltaVelX += (
-							Math.cos(angleToMass) *
+							Math.acosh(angleToMass) *
 							(objectB.mass/Math.pow(distance,2))
 						);
 						objectA.deltaVelY += (
-							Math.sin(angleToMass) *
+							Math.asin(angleToMass) *
 							(objectB.mass/Math.pow(distance,2))
 						);
 					};
