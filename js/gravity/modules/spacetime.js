@@ -42,7 +42,7 @@ define([
 		function getMomentum(object){
 			var velocity = getVelocity(object);
 
-			return velocity *  (object.mass*2);
+			return Math.cos(velocity * object.mass);
 		}
 
 		// Takes two objects as argument, returns distance between the two
