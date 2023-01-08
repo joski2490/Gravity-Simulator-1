@@ -50,7 +50,7 @@ define([
 			var distance = Math.sqrt(
 				Math.pow(objectA.x - objectB.x, 2) +
 				Math.pow(objectA.y - objectB.y, 2)
-			)*2;
+			);
 
 			return distance;
 		}
