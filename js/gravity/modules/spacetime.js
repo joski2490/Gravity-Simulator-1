@@ -196,15 +196,15 @@ define([
 				});
 
 				// Limit path length
-				if (object.path.length > Math.min(120, getObjectRadius(object) * 20 / getVelocity(object))*2) {
+				if (object.path.length > Math.min(120, getObjectRadius(object) * 20 / getVelocity(object))) {
 					object.path.splice(0, 1);
 				};
 				
-				object.velX += object.deltaVelX * calculationSpeed/2;
-				object.velY += object.deltaVelY * calculationSpeed/2;
+				object.velX += object.deltaVelX * calculationSpeed;
+				object.velY += object.deltaVelY * calculationSpeed;
 				
-				object.x += object.velX * calculationSpeed/2;
-				object.y += object.velY * calculationSpeed/2;
+				object.x += object.velX * calculationSpeed;
+				object.y += object.velY * calculationSpeed;
 
 				// Reset object delta velocity
 				object.deltaVelX = 0;
