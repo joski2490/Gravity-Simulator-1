@@ -112,7 +112,7 @@ define([
 		})();
 
 		// asteroid belt around a center star
-		 var starmass = 10000;
+		 /*var starmass = 10000;
 		var blackhole = spacetime.addObject({
 			x: 0,
 			y: 0,
@@ -151,7 +151,7 @@ define([
 				density: 1,
 				path: []
 			});
-		};
+		};*/
 	}
 
 	return app;
