@@ -172,11 +172,11 @@ define([
 
 						// All credit for this formula goes to an Isaac Newton
 						objectA.deltaVelX += (
-							Math.acosh(angleToMass) *
+							Math.cos(angleToMass) *
 							(objectB.mass/Math.pow(distance,2))
 						);
 						objectA.deltaVelY += (
-							Math.asinh(angleToMass) *
+							Math.sin(angleToMass) *
 							(objectB.mass/Math.pow(distance,2))
 						);
 					};
@@ -200,11 +200,11 @@ define([
 					object.path.splice(0, 1);
 				};
 				
-				object.velX += object.deltaVelX * calculationSpeed;
-				object.velY += object.deltaVelY * calculationSpeed;
+				object.velX += object.deltaVelX * calculationSpeed/2;
+				object.velY += object.deltaVelY * calculationSpeed/2;
 				
-				object.x += object.velX * calculationSpeed;
-				object.y += object.velY * calculationSpeed;
+				object.x += object.velX * calculationSpeed/2;
+				object.y += object.velY * calculationSpeed/2;
 
 				// Reset object delta velocity
 				object.deltaVelX = 0;
